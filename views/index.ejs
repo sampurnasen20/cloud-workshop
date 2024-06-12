@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      
+          <div class="weather">
+            <div class="weather-day">
+              <h2>Weather Forcast New</h2>
+              <% if(weather !== null){ %>
+              <div class="details">
+                <h3 class="city">Location: <%= city %></h3>
+                <h4 class="day">Day: <%= weather.day %></h4>
+                <p class="condition"><%= weather.condition %></p>
+              </div>
+              <img class="weather-icon" src="/images/<%= weatherIcon %>" alt="<%= weather.condition %>">
+              <div class="temps">
+                <p class="temp low"><img src="/images/low.svg" alt="Low Temperature"><%= weather.tempLow %>&deg;</p>
+                <p class="temp high"><img src="/images/high.svg" alt="High Temperature"><%= weather.tempHigh %>&deg;</p>
+              </div>
+              <% } %>
+              <% if(error !== null){ %>
+                <p><%= error %></p>
+              <% } %>
+            </div>
+          </div>
+        
+    </div>
+  </body>
+</html>
